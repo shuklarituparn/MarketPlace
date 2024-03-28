@@ -1,0 +1,58 @@
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana
+    environment:
+      - GF_SMTP_ENABLED=<>
+      - GF_SMTP_HOST=<>
+      - GF_SMTP_USER=resend
+      - GF_SMTP_PASSWORD=<>
+      - GF_SMTP_SKIP_VERIFY=false
+      - GF_SMTP_FROM_NAME=grafana
+      - GF_SMTP_FROM_ADDRESS=<>
+    ports:
+      - "3000:3000"
+
+  prometheus:
+    build: ./internal/prometheus
+    ports:
+      - "9090:9090"
+
+  app:
+    container_name: marketplace
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:15.4
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: <Пароль Потгреса>
+      POSTGRES_DB: marketplace
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256"
+    volumes:
+      - marketplace_data:/var/lib/postgresql/data
+      - ./init/db_data.sql:/docker-entrypoint-initdb.d/db_data.sql
+
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: <email>
+      PGADMIN_DEFAULT_PASSWORD: <Пароль>
+      PGADMIN_CONFIG_WTF_CSRF_CHECK_DEFAULT: "False"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
+
+volumes:
+  marketplace_data:
