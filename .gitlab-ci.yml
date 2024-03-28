@@ -1,0 +1,21 @@
+stages:
+  - build
+
+variables:
+  GO_VERSION: "1.22"
+
+build:
+  stage: build
+  image: golang:${GO_VERSION}
+  script:
+    - echo "Display Go version"
+    - go version
+    - echo "Downloading dependencies"
+    - go mod download
+    - cd cmd/main
+    - echo "Building"
+    - go build -o main ../../
+  artifacts:
+    paths:
+      - cmd/main/main
+

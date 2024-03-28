@@ -36,7 +36,6 @@
 - Метрики от Prometheus можете здесь посмотреть https://marketplace.rtprnshukla.ru/metrics/
 - АПИ доступен по сайту: https://marketplace.rtprnshukla.ru/  
   ` (Проверка работоспособности отображается, если мы открываем сайт без метода)`
-- 
 - `Сначала прочтите это` - [Установка](docs/setup.md)
 
 ---
