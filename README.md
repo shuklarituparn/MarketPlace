@@ -6,6 +6,7 @@
 
 `Скоро приложение для доступа к этому API будет готово (надеюсь) и будет доступно по адресу VK-MARKETPLACE.rtprnshukla.ru`
 
+Вы можете отслеживать прогресс здесь: [Marketplace-Application](https://github.com/shuklarituparn/Marketplace-Application)
 
 ## Использование и установка
 
