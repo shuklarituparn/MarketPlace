@@ -9,6 +9,8 @@
 
 Вы можете отслеживать прогресс здесь: [Marketplace-Application](https://github.com/shuklarituparn/Marketplace-Application)
 
+---
+
 ## Использование и установка
 
 - [Установка](docs/setup.md)
