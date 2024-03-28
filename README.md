@@ -4,7 +4,8 @@
 
 ![marketplave](https://github.com/shuklarituparn/Marketplace-Application/assets/66947051/d6e2f000-0277-4331-933d-87dad46f6e8c)
 
-`Скоро приложение для доступа к этому API будет готово (надеюсь) и будет доступно по адресу VK-MARKETPLACE.rtprnshukla.ru`
+- API Доступен здесь `https://marketplace.rtprnshukla.ru/docs/`
+- Скоро приложение для доступа к этому API будет готово (надеюсь) и будет доступно по адресу `vk-marketplace.rtprnshukla.ru`
 
 Вы можете отслеживать прогресс здесь: [Marketplace-Application](https://github.com/shuklarituparn/Marketplace-Application)
 
