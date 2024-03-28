@@ -1,54 +1,75 @@
-# VK Marketplace API
+# 🛒 Маркетплейс API
 
-VK Marketplace API is a project developed for the VK Internship. It serves as the backend for managing and retrieving information about users, advertisements.
 
-## Table of Contents
 
-- [VK Marketplace API](#filmotek-api)
-	- [Table of Contents](#table-of-contents)
-	- [Introduction](#introduction)
-	- [Features](#features)
-	- [Getting Started](#getting-started)
-		- [Installation](#installation)
-	- [Contributing](#contributing)
-	- [License](#license)
+![marketplave](https://github.com/shuklarituparn/Marketplace-Application/assets/66947051/d6e2f000-0277-4331-933d-87dad46f6e8c)
 
-## Introduction
+`Скоро приложение для доступа к этому API будет готово (надеюсь) и будет доступно по адресу VK-MARKETPLACE.rtprnshukla.ru`
 
-The VK Marketplace API is designed to provide a centralized backend for storing and retrieving information about  users, advertisements. It offers a set of API endpoints that allow users to perform various operations related to VK Marketplace data.
 
-## Getting Started
+## Использование и установка
 
-### Installation
+- [Установка](docs/setup.md)
 
-1. Clone the repository:
+---
 
-   ```bash
-   git clone https://github.com/shuklarituparn/VK-Marketplace.git
-   ```
 
-2. Navigate to the project directory:
+## Обзор
 
-   ```bash
-   cd VK-Marketplace
-   ```
+Этот API позволяет вам выполнить следующую задачу
 
-3. Install dependencies:
+### Пользователи
 
-   ```bash
-   make setup
-   ```
+- Пользователи могут зарегистрироваться, отправив логин и пароль
+- Пользователи могут зарегистрироваться, отправив логин и пароль
 
-4. To start the VK-Marketplace API server, run the following command:
 
-```bash
-make dev
-```
+### Объявления
 
-## Contributing
+- Зарегистрированные пользователи могут размещать объявления
+- отображение объявлений
 
-We welcome contributions from the community! If you'd like to contribute to the project, please follow our [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md).
+### Развертывание
 
-## License
+- Документация Swagger доступна на сайте: https://marketplace.rtprnshukla.ru/docs/ (на английском)
+- Метрики от Prometheus можете здесь посмотреть https://marketplace.rtprnshukla.ru/metrics/
+- АПИ доступен по сайту: https://marketplace.rtprnshukla.ru/  
+  ` (Проверка работоспособности отображается, если мы открываем сайт без метода)`
+- 
+- `Сначала прочтите это` - [Установка](docs/setup.md)
 
-This project is licensed under the [MIT License](LICENSE).
+---
+
+## Особенности
+
+- **Мониторинг**: Сервис использует prometheus/grafana для сбора метрик из различных эндпойнты
+- **OpenAPI/Swagger**: Сервис использует спецификацию OpenAPI/Swagger для лучшего тестирования и документирования
+
+---
+
+## Технологический стек
+
+- **Бэкенд**: Go (net/http)
+- **Базы данных**: GORM с PostgreSQL (локальная)
+- **Электронная почта**: resend для отправки alerts из grafana
+- **Генерация метрики**: Prometheus
+- **Мониторинг**: Grafana для визуализации
+- **Аутентификация пользователей**: Использовал Jwt
+- **Git Хуки**: Использовал husky
+- **Linting**: Использовал golang-ci-lint
+- **Hot-Reload**- Использовал air
+- **Makefile** - Добавил возможность установки сервиса с помощью makefile вместе с docker
+- **Deployment**: Docker, Docker-compose
+- **CI/CD**: Github Actions, Gitlab
+
+---
+## Измерение и отображение метрик
+
+
+![Screenshot from 2024-03-28 21-55-44](https://github.com/shuklarituparn/Filmoteka/assets/66947051/0f49e775-e0d7-4ba6-b827-d3e31a3093e6)
+
+
+> При запросе сервера prometheus в grafana добавьте `https://prometheus:9090`
+
+
+---
