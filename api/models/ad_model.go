@@ -9,8 +9,8 @@ type Ad struct {
 	AdText       string    `json:"ad_text" validate:"required,max=500"`
 	ImageAddress string    `json:"image_address" validate:"required,url"`
 	Price        float64   `json:"price" validate:"required"`
-	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
+	CreatedAt    time.Time `json:"created_at" validate:"omitempty"`
+	UpdatedAt    time.Time `json:"updated_at" validate:"omitempty"`
 }
 
 type CreateAd struct {
