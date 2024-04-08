@@ -55,13 +55,13 @@ func SearchAd(db *gorm.DB) http.HandlerFunc {
 				return
 			}
 			db.Model(&models.Ad{}).
-				Where("LOWER(ad_text) LIKE ? OR LOWER(title) LIKE ? AND price BETWEEN ? AND ?", "%"+strings.ToLower(searchQuery)+"%", "%"+strings.ToLower(searchQuery)+"%", "%"+strings.ToLower(searchQuery)+"%", min, max).
+				Where("LOWER(ad_text) LIKE ? OR LOWER(title) LIKE ? AND price BETWEEN ? AND ?", "%"+strings.ToLower(searchQuery)+"%", "%"+strings.ToLower(searchQuery)+"%", min, max).
 				Order(fmt.Sprintf("%s %s", sortBy, sortOrder)).
 				Distinct().
 				Find(&ads)
 		} else {
 			db.Model(&models.Ad{}).
-				Where("LOWER(ad_text) LIKE ? OR LOWER(title) LIKE ?", "%"+strings.ToLower(searchQuery)+"%", "%"+strings.ToLower(searchQuery)+"%", "%"+strings.ToLower(searchQuery)+"%").
+				Where("LOWER(ad_text) LIKE ? OR LOWER(title) LIKE ?", "%"+strings.ToLower(searchQuery)+"%", "%"+strings.ToLower(searchQuery)+"%").
 				Order(fmt.Sprintf("%s %s", sortBy, sortOrder)).
 				Distinct().
 				Find(&ads)

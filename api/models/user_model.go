@@ -7,8 +7,8 @@ type User struct {
 	Email     string    `gorm:"uniqueIndex;not null" json:"email" validate:"required,email"`
 	Password  string    `gorm:"not null" json:"password" validate:"required,min=8"`
 	Ads       []Ad      `json:"ads"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
+	CreatedAt time.Time `json:"created_at" validate:"omitempty"`
+	UpdatedAt time.Time `json:"updated_at" validate:"omitempty"`
 }
 
 type RegisterUserModel struct {
